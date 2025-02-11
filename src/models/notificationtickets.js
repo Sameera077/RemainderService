@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  NotificationTicket.init({
+  NotificationTickets.init({
     subject: {
       type: DataTypes.STRING,
       allowNull: false
@@ -29,7 +29,8 @@ module.exports = (sequelize, DataTypes) => {
     status: {
       type: DataTypes.ENUM,
       allowNull: false,
-      values: ["PENDING", "SUCCESS", "FAILED"]
+      values: ["PENDING", "SUCCESS", "FAILED"],
+      defaultValue: "PENDING"
     },
     notificationTime: {
       type: DataTypes.DATE,
